@@ -1,0 +1,30 @@
+#!/bin/bash
+source /common.sh
+
+# Download and install the LanternFlyTV .deb file
+LANTERNFLY_ZIP_URL=$(grep "LANTERNFLY_ZIP_URL" /config | cut -d '=' -f 2)
+
+# Download the zip file
+wget $LANTERNFLY_ZIP_URL -O /tmp/lanternflytv.zip
+
+# Unzip the file
+unzip /tmp/lanternflytv.zip -d /tmp/
+
+# Install the .deb file
+dpkg -i /tmp/lanternflytv_*.deb
+
+# Add LanternFlyTV to startup
+cat <<EOF > /etc/xdg/autostart/lanternflytv.desktop
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/lanternflytv
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=LanternFlyTV
+Comment=Start LanternFlyTV on boot
+EOF
+
+# Clean up
+rm /tmp/lanternflytv.zip
+rm /tmp/lanternflytv_*.deb
