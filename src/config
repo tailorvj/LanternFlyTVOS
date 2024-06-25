@@ -10,11 +10,13 @@ export RPI_IMAGER_DESCRIPTION="Fullscreen cloud-controlled browser on a Raspberr
 export RPI_IMAGER_WEBSITE="https://github.com/tailorvj/LanternFlyTVOS"
 export RPI_IMAGER_ICON="https://raw.githubusercontent.com/tailorvj/LanternFlyTVOS/devel/media/rpi-imager-LanternFlyTVOS.png"
 
-# Include necessary modules for desktop environment
 export MODULES="base(network, gui(lanternflytvos))"
 
-# Resize root partition
-export BASE_IMAGE_RESIZEROOT=200
+# Enlarge root partition before build by 2GB
+export BASE_IMAGE_ENLARGEROOT=2000
+
+# Resize root partition after build to minimum size + 500MB
+export BASE_IMAGE_RESIZEROOT=500
 
 # Start the LanternFlyTV browser on boot
 export GUI_STARTUP_SCRIPT=/opt/custompios/scripts/start_lanternflytv
