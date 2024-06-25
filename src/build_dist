@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+set -x  # Print commands and their arguments as they are executed.
+set -e  # Exit immediately if a command exits with a non-zero status.
+
+echo "Starting build process..."
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 export DIST_PATH=${DIR}
@@ -6,3 +11,5 @@ export CUSTOM_PI_OS_PATH=$(<${DIR}/custompios_path)
 export PATH=$PATH:$CUSTOM_PI_OS_PATH
 
 ${CUSTOM_PI_OS_PATH}/build_custom_os $@
+
+echo "Build process completed successfully!"

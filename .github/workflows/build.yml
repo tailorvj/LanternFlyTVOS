@@ -14,7 +14,7 @@ jobs:
     - name: Install Dependencies
       run: |
         sudo apt update
-        sudo apt install -y coreutils p7zip-full qemu-user-static
+        sudo apt install -y coreutils p7zip-full qemu-user-static qemu-utils kpartx dosfstools
 
     - name: Checkout CustomPiOS
       uses: actions/checkout@v2
@@ -46,7 +46,7 @@ jobs:
       run: |
         sudo modprobe loop
         cd repository/src
-        sudo bash -x ./build_dist
+        sudo bash -x ./build_custom_os
 
     - name: Copy output
       id: copy
