@@ -4,6 +4,7 @@ set -x  # Print commands and their arguments as they are executed.
 set -e  # Exit immediately if a command exits with a non-zero status.
 
 echo "Starting build process..."
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 export DIST_PATH=${DIR}

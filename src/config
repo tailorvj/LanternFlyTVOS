@@ -1,5 +1,5 @@
 export DIST_NAME="LanternFlyTVOS"
-export DIST_VERSION="0.0.3"
+export DIST_VERSION="0.0.4"
 
 # Path to the LanternFlyTV zip file
 LANTERNFLY_ZIP_URL="https://github.com/tailorvj/lanternflytv/actions/runs/9634597284/artifacts/1629213935"
@@ -10,7 +10,7 @@ export RPI_IMAGER_DESCRIPTION="Fullscreen cloud-controlled browser on a Raspberr
 export RPI_IMAGER_WEBSITE="https://github.com/tailorvj/LanternFlyTVOS"
 export RPI_IMAGER_ICON="https://raw.githubusercontent.com/tailorvj/LanternFlyTVOS/devel/media/rpi-imager-LanternFlyTVOS.png"
 
-export MODULES="base(network, gui(lanternflytvos))"
+export MODULES="base(raspicam, network, disable-services(gui(lanternflytvos)))"
 
 # Enlarge root partition before build by 2GB
 export BASE_IMAGE_ENLARGEROOT=2000

@@ -2,25 +2,29 @@ LanternFlyTVOS
 ==========
 
 .. image:: media/LanternFlyTVOS.png?raw=true
-.. :scale: 50 %
-.. :alt: LanternFlyTVOS logo
+.. :scale: 25 %
+.. :alt: LanternFlyTVOS temporary logo July 2024
 
 A `Raspberry Pi <http://www.raspberrypi.org/>`_ distribution to display webpages in full screen. It includes `LanternFlyTV Cloud Browser`_ out of the box and the scripts necessary to load it at boot.
 This repository contains the source script to generate the distribution out of an existing `Raspbian <http://www.raspbian.org/>`_ distro image.
 
 LanternFlyTVOS is a derivative of FullPageOS and joined the distros that use `CustomPiOS <https://github.com/guysoft/CustomPiOS>`_.
 
-Donate
-------
-LanternFlyTVOS is open-source and maintained by Tailor VJ. If it's helping your life, your organisation or makes you happy, please consider making a donation. It means I can code more and worry less about my balance. Any amount counts.
+.. _Release notes:
 
-Patreon info will be posted here soon...
+v0.0.4 (2024-Jul-09) - Experimental release
+-------------------------------------------
+
+* Trying to get the LanterFlyTV Cloud Browser to run on the x server
+* Build process on Github Actions is now working
+* Announcements once I have a working version. Let's hope it's this one
 
 Where to get it?
 ----------------
 
-At the moment it is distributed to a group of early adopters and testers. 
-Please contact Tailor VJ for details. 
+Take a look at the `actions` section. 
+
+Very early versions. Please be patient.
 
 How to use it?
 --------------
@@ -51,7 +55,20 @@ Features
 Developing
 ----------
 
-Requirements
+The easiest way to have a working build system is using Github Actions. 
+
+This also conserves resources on your local machine.
+
+* Fork the repo 
+* Clone to a workstation
+* Create a feature branch
+* Push
+* Create Pull request
+* Approve Pull request
+* Automatic build should start
+* Download the image from the actions tab
+
+Local Requirements
 ~~~~~~~~~~~~
 
 #. `qemu-arm-static <http://packages.debian.org/sid/qemu-user-static>`_
