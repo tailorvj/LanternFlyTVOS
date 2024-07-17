@@ -1,4 +1,6 @@
 #!/bin/bash
 
 # Start X server and launch the LanternFlyTV browser
-startx /usr/bin/lanternflytv
+# /usr/bin/lanternflytv
+# for now start xterm
+xterm
