@@ -8,6 +8,9 @@ set -e
 
 source /common.sh
 
+unpack /filesystem/opt /opt
+unpack /filesystem/boot /"${BASE_BOOT_MOUNT_PATH}"
+
 # Update and install necessary packages
 apt-get update
 
@@ -29,9 +32,6 @@ apt-get install -y --no-install-recommends \
     wget \
     unzip
 
-# Download and install the LanternFlyTV .deb file
-LANTERNFLY_ZIP_URL=$(grep "LANTERNFLY_ZIP_URL" /config | cut -d '=' -f 2)
-
 # Download the zip file
 wget $LANTERNFLY_ZIP_URL -O /tmp/lanternflytv.zip
 
@@ -39,7 +39,7 @@ wget $LANTERNFLY_ZIP_URL -O /tmp/lanternflytv.zip
 unzip /tmp/lanternflytv.zip -d /tmp/
 
 # Install the .deb file
-dpkg -i /tmp/lanternflytv_*.deb
+# apt install /tmp/lanternflytv_*.deb
 
 # Clean up
 rm /tmp/lanternflytv.zip
