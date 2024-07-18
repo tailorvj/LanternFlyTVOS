@@ -2,7 +2,7 @@ export DIST_NAME="LanternFlyTVOS"
 export DIST_VERSION="0.0.4"
 
 # Path to the LanternFlyTV zip file
-LANTERNFLY_ZIP_URL="https://github.com/tailorvj/lanternflytv/actions/runs/9634597284/artifacts/1629213935"
+export LANTERNFLY_ZIP_URL="https://github.com/tailorvj/lanternflytv/actions/runs/9634597284/artifacts/1629213935"
 
 # rpi-imager json generator settings
 export RPI_IMAGER_NAME="${DIST_NAME}"
